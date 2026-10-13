@@ -1,0 +1,8 @@
+{
+  "name": "\"Nooki\" Study Companion",
+  "description": "Hand-drawn cozy Ghibli-inspired study companion featuring a 24-hour master clock, Pomodoro focus engine, ambient Lo-Fi audio mixer, spaced repetition planner, and Nooki mascot guidance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

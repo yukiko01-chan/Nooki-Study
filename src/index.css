@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-canvas: #FFF9F2;
+    --bg-card: #FFFFFF;
+    --border-subtle: #EADBCC;
+    --text-primary: #2D3748;
+    --text-secondary: #718096;
+    --accent-primary: #88C0D0;
+    --accent-secondary: #F3A683;
+    --accent-moss: #7BAE7F;
+    --ribbon-bg: #FFE5D9;
+    --ribbon-border: #F3A683;
+    --shadow-cozy: 0 4px 20px -2px rgba(138, 120, 102, 0.08);
+  }
+
+  .dark {
+    --bg-canvas: #0D1B2A;
+    --bg-card: #1B263B;
+    --border-subtle: #2C3E55;
+    --text-primary: #E2E8F0;
+    --text-secondary: #94A3B8;
+    --accent-primary: #4ECCA3;
+    --accent-secondary: #E8837D;
+    --accent-moss: #52B788;
+    --ribbon-bg: #1F304A;
+    --ribbon-border: #4ECCA3;
+    --shadow-cozy: 0 4px 20px -2px rgba(0, 0, 0, 0.35);
+  }
+
+  body {
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Cozy Ghibli Micro-Animations */
+@keyframes steamDrift {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(0.9);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-8px) translateX(2px) scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-16px) translateX(-2px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes starPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+}
+
+.animate-steam-1 {
+  animation: steamDrift 2.8s infinite ease-out;
+}
+.animate-steam-2 {
+  animation: steamDrift 3.4s infinite 0.9s ease-out;
+}
+.animate-float {
+  animation: gentleFloat 4s infinite ease-in-out;
+}
+.animate-star {
+  animation: starPulse 2.5s infinite ease-in-out;
+}
+
+/* Subtle watercolor paper grain effect */
+.paper-texture {
+  background-image: radial-gradient(rgba(138, 120, 102, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.dark .paper-texture {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(136, 192, 208, 0.3);
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(78, 204, 163, 0.25);
+}
